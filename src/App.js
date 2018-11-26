@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import {Button, Card, CardTitle, Container} from 'react-materialize';
 
-const GITHUB_URL = "https://api.github.com/users/mhoelzer";
+const GITHUB_URL = "https://api.github.com/users/StealthMcCloud";
 
 class App extends Component {
   state = {
@@ -20,7 +20,7 @@ class App extends Component {
       .catch(err => console.log(`${err} error error error`));
   };
   
-  handleClickMeButt = event => {
+  clickButton = event => {
     this.setState(prevState => ({
       active: !prevState.active
     }));
@@ -31,10 +31,10 @@ class App extends Component {
       <div className="main">
         <br />
         <Container>
-          <Button floating large className="orange waves-effect waves-red" onClick={this.handleClickMeButt}>:)</Button>
+          <Button floating large className="orange waves-effect waves-red" onClick={this.clickButton}>Click Here</Button>
           {this.state.active ?
             <div>
-              {/* <Button floating large className="orange btn-large waves-effect waves-red" onClick={this.handleClickMeButt} icon="clear"></Button>  --> if do this, put the above where null is with a + instead of :) */}
+              {/* <Button floating large className="orange btn-large waves-effect waves-red" onClick={this.clickButton} icon="clear"></Button>  --> if do this, put the above where null is with a + instead of :) */}
               <Card 
                 horizontal
                 header={<CardTitle image={this.state.user.avatar_url}/>}
